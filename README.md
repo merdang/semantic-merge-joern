@@ -193,11 +193,13 @@ actual parameters into a single vertex.
 
 ## How to cite
 
-If you use this software, please cite the archived release:
+If you use this software, please cite the archived release. The DOI below is
+the *concept* DOI: it always resolves to the latest version. To cite the exact
+version you used, take that version's own DOI from its Zenodo record.
 
 > Gurbangylyjov, M. (2026). *semantic-merge-joern: semantic three-way merge for
-> Java on Joern's Code Property Graph* (v1.0) [Software]. Zenodo.
-> https://doi.org/10.5281/zenodo.22809122
+> Java on Joern's Code Property Graph* [Software]. Zenodo.
+> https://doi.org/10.5281/zenodo.22809121
 
 ```bibtex
 @misc{gurbangylyjov2026semanticmerge,
@@ -205,10 +207,9 @@ If you use this software, please cite the archived release:
   title        = {{semantic-merge-joern}: Semantic Three-Way Merge for {Java}
                   on {Joern}'s Code Property Graph},
   year         = {2026},
-  version      = {1.0},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.22809122},
-  howpublished = {\url{https://doi.org/10.5281/zenodo.22809122}}
+  doi          = {10.5281/zenodo.22809121},
+  howpublished = {\url{https://doi.org/10.5281/zenodo.22809121}}
 }
 ```
 
