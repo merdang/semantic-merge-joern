@@ -1,0 +1,9 @@
+{
+  "description": "Both variants delete the SAME statement (`y = y + 5;`). Completes the convergent family: convergent_edit pins the identical *edit*, convergent_insert the identical *insertion* (which HPR must reject, since two independently added statements have no counterpart to be identified through), and this pins the identical *deletion* - which HPR handles correctly, because a deletion is the absence of a counterpart on the Base side and both variants agree on that absence. Clean, and the merged program is the program both developers wrote.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 2,
+  "ap_b": 2,
+  "stdout": "1\n2\n",
+  "category": "agreement (convergent deletion)"
+}

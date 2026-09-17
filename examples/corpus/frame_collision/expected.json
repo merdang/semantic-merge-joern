@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (A == Base) whose result must equal B exactly. B deletes `int gap = 0;`, so every later line in B's frame shifts up one: B's `System.out.println(x)` lands on line 6, the same line:col as Base's `y = y + 1;`. The sub-expression span filter in reconstitution - which exists to drop `a + 2` from inside `a = a + 2` - would then read the shorter span as nested in the longer one and DROP `y = y + 1` from the merged program, printing 5,2 where B prints 5,3. The filter therefore requires the two vertices to share a contributor: a genuine sub-expression always comes from the same version as its statement.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 0,
+  "ap_b": 3,
+  "stdout": "5\n3\n",
+  "category": "agreement (provenance-guarded span filter)"
+}

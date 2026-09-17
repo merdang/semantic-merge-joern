@@ -1,0 +1,15 @@
+{
+  "description": "LIMITATION PIN (not a merge defect). A `switch` with two cases and a default - the first in the corpus. The merge is clean and the affected points are right, but emission drops the switch entirely: the case bodies (`out = 10`, `break;`, `out = 20`, ...) exist as vertices with their dependences, yet none is emitted, because Joern attaches them via JUMP_TARGET vertices that the statement-level export deliberately excludes (only METHOD/PARAM/RETURN/CALL/RETURN/CONTROL_STRUCTURE are kept), so the cases lose their attachment to the switch. The header also carries no source position, so it sorts ahead of the declarations it reads. Emitting a switch needs JUMP_TARGET added to the exported labels plus case-aware reconstitution - a schema change, larger than the for/do-while header repair. Pinned; XPASS retires it.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 3,
+  "ap_b": 3,
+  "stdout": "25\n6\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "switch cases hang off JUMP_TARGET vertices the export excludes, so emission drops them",
+  "category": "known limitation (switch is not emittable)"
+}

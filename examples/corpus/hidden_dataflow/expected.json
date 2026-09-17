@@ -1,0 +1,5 @@
+{
+  "description": "Git merges silently (edits far apart), but B's new fee computation reads `rate`, which A changed - the merged fee would be neither side's intent. Semantic: A interferes with B (Type-I).",
+  "verdict": "type1",
+  "git": "clean"
+}

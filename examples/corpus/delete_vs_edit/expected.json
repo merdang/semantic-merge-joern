@@ -1,0 +1,5 @@
+{
+  "description": "Git merges silently: B deletes the increment that A's edited println depends on - silent merge prints 102, A intended 103. Semantic: Type-I both directions.",
+  "verdict": "type1",
+  "git": "clean"
+}

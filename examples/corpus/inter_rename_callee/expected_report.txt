@@ -1,0 +1,21 @@
+=== Semantic merge report ===
+VERDICT: TYPE-I INTERFERENCE — merge refused (3 conflicting point(s))
+  damaged: A's changes at 3 point(s) · B's changes at 3 point(s) · preserved core at 0 point(s)
+
+method Main.main:void(java.lang.String[])
+  ✗   L3:13  'int a = triple(3)'   [damages: A, B]
+      base 'int a = twice(3)' · A 'int a = triple(3)' · B 'int a = twice(3)'
+      cause: contributors disagree on this statement: A has 'int a = triple(3)', B has 'int a = twice(3)'
+      cause: the union adds a DDG dependence on '3' from 'twice(3)' that A did not have
+      cause: the union adds a DDG dependence on 'twice(3)' from 'twice(3)' that A did not have
+      cause: the union adds a DDG dependence on '3' from 'triple(3)' that B did not have
+      cause: the union adds a DDG dependence on 'triple(3)' from 'triple(3)' that B did not have
+      path:  'triple(3)' →(triple(3))→ 'int a = triple(3)'
+  ✗    L4:9  'System.out.println(a)'   [damages: A, B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int a = triple(3)' →(a)→ 'System.out.println(a)'
+  ✗    L4:9  'System.out'   [damages: A, B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'System.out.println(a)' →(a)→ 'System.out'
+
+Fix the conflicting statements on one side and re-merge.

@@ -1,0 +1,9 @@
+{
+  "description": "Two methods named calc, distinguished only by arity, each called once from main; A edits one overload's body and B the other's. Clean, and the point is that correspondence and scoping key on the method *fullName* - which carries the signature - so the overloads are separate methods throughout and neither edit contaminates the other. The demand-driven run decides it via the Type-0 certificate.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 9,
+  "ap_b": 11,
+  "stdout": "6\n6\n",
+  "category": "agreement (overload resolution by signature)"
+}

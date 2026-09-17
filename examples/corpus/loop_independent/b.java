@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        int b = 0;
+        int i = 0;
+        while (i < 3) {
+            a = a + 1;
+            b = b + 7;
+            i = i + 1;
+        }
+        System.out.println(a);
+        System.out.println(b);
+    }
+}

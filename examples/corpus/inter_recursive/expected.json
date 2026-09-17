@@ -1,0 +1,5 @@
+{
+  "description": "Recursion, which stresses the two-pass slicer's fixpoint: A edits fact()'s base case (return 1 -> 2), B adds a call site println(fact(4)) that relies on the old behaviour. Git merges silently; the conflict flows through the recursive call. Also the corpus's early-exit method: `return n * fact(n - 1)` runs exactly when `n <= 1` is false, so its immediate control dependence is the predicate, not the method entry. Until branch polarity was exported it carried both, which made Type II report the graph unrealisable and left reconstitution with nowhere to place the tail; both are now correct and the method round-trips.",
+  "verdict": "type1",
+  "git": "clean"
+}

@@ -1,0 +1,8 @@
+{
+  "description": "The corpus's first if/else, possible only since branch polarity was exported. A edits the THEN branch (y = 1 -> 10), B edits the ELSE branch (y = 2 -> 20); the branches are mutually exclusive, so the ideal merge keeps both and prints 10,20 - which git produces. We report Type I, and the reason is inherent to the affected-points formulation rather than a defect: both edits flow to `return y`, so each side's changed-behaviour slice covers BOTH branches, and the union sees two attribute conflicts (A supplies the else vertex unedited while B supplies it edited, and vice versa). AP is path-insensitive - it cannot see that the two changes affect disjoint execution paths - so complementary-branch edits interfere spuriously. HPR's test is defined the same way and would fire likewise.",
+  "verdict": "type1",
+  "git": "clean",
+  "ap_a": 14,
+  "ap_b": 14,
+  "category": "false semantic conflict - AP is path-insensitive across branches"
+}

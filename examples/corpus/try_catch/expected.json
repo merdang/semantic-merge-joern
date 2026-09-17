@@ -1,0 +1,15 @@
+{
+  "description": "LIMITATION PIN (not a merge defect). A try/catch, with A editing the try body and B an independent variable. The merge is clean and the affected points are right; emission drops the catch clause, producing `try { ... }` with no handler, which javac rejects. Same family as switch/for/do-while: reconstitution renders a control structure as `code { children }`, which cannot express a construct with two blocks. Pinned; XPASS retires it.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 7,
+  "ap_b": 3,
+  "stdout": "2\n6\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "try/catch needs two blocks; emission renders one",
+  "category": "known limitation (try/catch is not emittable)"
+}

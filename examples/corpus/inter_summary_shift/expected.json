@@ -1,0 +1,5 @@
+{
+  "description": "A shifts the callee's summary dependence (pick returns y instead of x); B edits q, the argument Base's callee ignored. Git merges silently and would print 9 - neither A's intent (2) nor B's (1). Semantic: Type-I. With computed per-argument summaries the detection runs precisely through A's new y-dependence; the bundled call vertex fires more coarsely (all arguments reach the result) - same verdict here, over-approximate only when neither callee uses the edited argument.",
+  "verdict": "type1",
+  "git": "clean"
+}

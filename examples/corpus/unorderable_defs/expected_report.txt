@@ -1,0 +1,48 @@
+=== Semantic merge report ===
+VERDICT: TYPE-I INTERFERENCE — merge refused (10 conflicting point(s))
+  damaged: A's changes at 10 point(s) · B's changes at 4 point(s) · preserved core at 0 point(s)
+
+method Main.main:void(java.lang.String[])
+  ✗   L7:13  'x = 2'   [damages: A]
+      cause: the union adds a DO dependence on 'x' from 'x = 1' that A did not have
+  ✗  L12:13  'int y = x'   [damages: A]
+      cause: downstream of the conflicting edits (dependence-affected)
+  ✗  L13:13  'int u = y + 10'   [damages: A]
+      base 'int u = y + 1' · A 'int u = y + 10' · B 'int u = y + 1'
+      cause: downstream of the conflicting edits (dependence-affected)
+  ✗  L13:17  'y + 10'   [damages: A]
+      base 'y + 1' · A 'y + 10' · B 'y + 1'
+      cause: downstream of the conflicting edits (dependence-affected)
+  ✗  L17:13  'int w = y + 2'   [damages: A, B]
+      base 'int w = y + 2' · A 'int w = y + 2' · B 'int w = y + 20'
+      cause: contributors disagree on this statement: A has 'int w = y + 2', B has 'int w = y + 20'
+      cause: the union adds a DDG dependence on '20' from 'y + 2' that A did not have
+      cause: the union adds a DDG dependence on 'y + 20' from 'y + 2' that A did not have
+      cause: the union adds a DDG dependence on '2' from 'y + 2' that B did not have
+      cause: the union adds a DDG dependence on 'y + 2' from 'y + 2' that B did not have
+      path:  'int y = x' →(y)→ 'int w = y + 2'
+  ✗  L17:17  'y + 2'   [damages: A, B]
+      base 'y + 2' · A 'y + 2' · B 'y + 20'
+      cause: contributors disagree on this statement: A has 'y + 2', B has 'y + 20'
+      path:  'int y = x' →(y)→ 'y + 2'
+  ✗   L18:9  'System.out.println(u)'   [damages: A]
+      cause: downstream of the conflicting edits (dependence-affected)
+  ✗   L18:9  'System.out'   [damages: A]
+      cause: downstream of the conflicting edits (dependence-affected)
+  ✗   L19:9  'System.out.println(w)'   [damages: A, B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int w = y + 2' →(w)→ 'System.out.println(w)'
+  ✗   L19:9  'System.out'   [damages: A, B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'System.out.println(w)' →(w)→ 'System.out'
+
+VERDICT: TYPE-II INFEASIBILITY — merge refused (1 unsatisfiable ordering constraint(s))
+  G_M is a faithful union, but no program has it as its PDG.
+
+  ✗ [cycle] flow dependences run in a cycle through 'if (p > 0)' → 'if (q > 0)' — no member of the block can come first
+         L6:9  'if (p > 0)'
+         L9:9  'if (q > 0)'
+
+Re-order the statements on one side and re-merge.
+
+Fix the conflicting statements on one side and re-merge.

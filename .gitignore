@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+
+# IDE / build tooling
+.vscode/
+.metals/
+.bsp/
+.bloop/
+.scala-build/
+
+# sbt build output
+target/
+**/project/target/
+**/project/project/
+**/project/metals.sbt
+
+# Python cache
+__pycache__/
+
+# Generated CPG binaries and Joern workspaces
+examples/cpgs/
+examples/workspace/
+sdg-merge/workspace/
+
+# Exporter / analysis output
+examples/pdg_json/
+sdg-merge/out/
+examples/corpus/*/cpgs/
+examples/corpus/*/pdg_json/
+
+# Visualizer PNGs
+sdg-merge/pdg_*.png
+
+# The demand-driven pipeline's emitted program. merged.java is committed (the
+# merge result, viewable without running); this is the same program produced
+# the demand-driven way, written so the harness can compare the two.
+examples/corpus/*/merged_scoped.java
+
+# Randomised triples (scratch batch from sdg-merge/fuzz.py)
+examples/fuzz/

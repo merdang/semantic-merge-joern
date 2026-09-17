@@ -1,0 +1,5 @@
+{
+  "description": "Both variants rewrite the SAME statement differently (x = 2 vs x = 3) with identical dependence structure - a pure attribute conflict. No merge can honour both intents. Git conflicts on the line; the semantic check must also fire.",
+  "verdict": "type1",
+  "git": "conflict"
+}

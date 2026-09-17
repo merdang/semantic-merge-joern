@@ -1,0 +1,5 @@
+{
+  "description": "Git merges silently: A tightens the if-condition, B adds a statement inside the branch. B's new code is control-dependent on A's changed predicate. Semantic: A interferes with B (Type-I).",
+  "verdict": "type1",
+  "git": "clean"
+}

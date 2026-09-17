@@ -1,0 +1,8 @@
+{
+  "description": "A edits x's initialiser, B edits y's initialiser - independent def-use chains. Non-interfering; the merge must integrate both edits.",
+  "verdict": "clean",
+  "ap_a": 3,
+  "ap_b": 3,
+  "stdout": "10\n20\n",
+  "git": "conflict"
+}

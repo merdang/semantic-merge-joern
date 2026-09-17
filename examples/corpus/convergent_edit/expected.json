@@ -1,0 +1,6 @@
+{
+  "description": "Both variants make the IDENTICAL edit (rate 10 -> 25). Identical concurrent changes cannot interfere: there is exactly one intended behaviour and the merge must produce it. Regression test for the pre-construction check, which compares affected *points* rather than edit *content* and over-reports here.",
+  "verdict": "clean",
+  "git": "clean",
+  "stdout": "50\n"
+}

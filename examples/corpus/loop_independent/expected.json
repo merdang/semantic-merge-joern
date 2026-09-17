@@ -1,0 +1,6 @@
+{
+  "description": "Two independent accumulators updated in one loop body: A edits a's step, B edits b's. The def-use chains never meet, so the merge must integrate both. Git conflicts because the two statements are adjacent lines - a false textual conflict inside a loop.",
+  "verdict": "clean",
+  "git": "conflict",
+  "stdout": "15\n21\n"
+}

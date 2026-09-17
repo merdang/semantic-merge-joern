@@ -1,0 +1,9 @@
+{
+  "description": "A callee's return value feeding a predicate: `if (twice(n) > 3)`, with A editing the callee so the branch stops being taken and B an independent variable. Interprocedural flow meets control dependence here - A's edit reaches the guarded assignment only through the callee's formal-out and then the CDG - which no other fixture combines. Clean, and the merged program takes A's branch decision (out stays 0) with B's value.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 11,
+  "ap_b": 3,
+  "stdout": "0\n5\n",
+  "category": "agreement (callee return in a predicate)"
+}

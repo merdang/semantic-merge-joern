@@ -1,0 +1,23 @@
+=== Semantic merge report ===
+VERDICT: TYPE-I INTERFERENCE — merge refused (4 conflicting point(s))
+  damaged: A's changes at 0 point(s) · B's changes at 4 point(s) · preserved core at 0 point(s)
+
+method Main.main:void(java.lang.String[])
+  ✗   L6:13  'int fee = rate * 2'   [damages: B]
+      base (absent) · A (absent) · B 'int fee = rate * 2'
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int rate = 20' →(rate)→ 'int fee = rate * 2'
+  ✗   L6:19  'rate * 2'   [damages: B]
+      base (absent) · A (absent) · B 'rate * 2'
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int rate = 20' →(rate)→ 'rate * 2'
+  ✗    L7:9  'System.out.println(fee)'   [damages: B]
+      base (absent) · A (absent) · B 'System.out.println(fee)'
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int rate = 20' →(rate)→ 'int fee = rate * 2' →(fee)→ 'System.out.println(fee)'
+  ✗    L7:9  'System.out'   [damages: B]
+      base (absent) · A (absent) · B 'System.out'
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int rate = 20' →(rate)→ 'int fee = rate * 2' →(fee)→ 'System.out.println(fee)' →(fee)→ 'System.out'
+
+Fix the conflicting statements on one side and re-merge.

@@ -1,0 +1,7 @@
+{
+  "description": "Roadmap slide-8 example: A edits x = 1 -> x = 10, B rewrites println(y) -> println(x + y). B's changed slice now depends on x, which A changed - A interferes with B (Type-I).",
+  "verdict": "type1",
+  "ap_a": 3,
+  "ap_b": 3,
+  "git": "clean"
+}

@@ -1,0 +1,8 @@
+{
+  "description": "A deletes the statement B edits - git's classic delete/modify conflict. Distinct from delete_vs_edit, where B deletes something A merely *depends on*: here the two edits target the same statement, so there is no merge to construct. A's intent is y == 2 (the statement gone), B's is y == 11 (the statement changed), and no program is both. Type I fires and git conflicts, so both tools flag it and a human resolves - the agreement case that matters, because it shows the semantic checker is not merely more permissive.",
+  "verdict": "type1",
+  "git": "conflict",
+  "ap_a": 2,
+  "ap_b": 4,
+  "category": "agreement (delete/modify \u2014 neither tool can merge it)"
+}

@@ -1,0 +1,7 @@
+{
+  "description": "Both variants make the IDENTICAL pair of edits, and the second edit's new text is the first edit's OLD text: `h1 + 0` vanishes from line 4 and reappears on line 5. GumTree matches subtrees, so it pairs base's `h1 + 0` with the variant's `h1 + 0` in the OTHER statement, while pairing both parent statements correctly in place. Accepting the child claim would leave the real counterpart unclaimed and let an edited operand enter G_M as a NEW vertex, so each side contributes its own copy and Type I fires on a convergent merge. A sub-expression's claim therefore answers to its host statement's claim.",
+  "verdict": "clean",
+  "git": "clean",
+  "stdout": "9\n",
+  "category": "agreement (host-consistent correspondence)"
+}

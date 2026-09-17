@@ -1,0 +1,5 @@
+{
+  "description": "A edits the argument's source in the caller (seed = 4 -> 9), B edits the callee body (x+1 -> x+2); both changes meet in compute()'s dataflow and the printed result. Git merges cleanly; true verdict: Type-I through param-in/param-out flow.",
+  "verdict": "type1",
+  "git": "clean"
+}

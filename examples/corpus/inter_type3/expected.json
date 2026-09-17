@@ -1,0 +1,8 @@
+{
+  "description": "HRB's Type-III shape: A adds a component to compute() (r = r * 10) while B adds a transitive call on compute() (compute(5)). The merge would execute A's new component in a calling context that exists in B but not in A, printing 60 - a value neither contributor computes (A prints 30, B prints 3 and 6). We do not implement Type III (a documented scope limitation), but Type I rejects this instance anyway: B's new call site pulls compute()'s body into its changed-behaviour slice, so `return r` gains an in-edge from A's new component that B did not have. Measured, not assumed - and one instance is not a proof of subsumption.",
+  "verdict": "type1",
+  "git": "clean",
+  "ap_a": 12,
+  "ap_b": 14,
+  "category": "Type-III shape caught by Type I (we do not implement Type III)"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (A == Base) whose result must equal B exactly. B replaces two writes to y with one, shifting its later line numbers, so the preserved println(x) keeps Base's line 8 while B's println(y) also lands on line 8 and the emission order comes down to a tie. Observable output ordering settles it: the two prints carry no data dependence, yet their relative order is the program's output, so they get their own edge (kind OUT - present in the graph, never traversed by a slice). Without it the merged program prints 13,1 where B prints 1,13.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 0,
+  "ap_b": 6,
+  "stdout": "1\n13\n",
+  "category": "agreement (the OUT ordering edge)"
+}

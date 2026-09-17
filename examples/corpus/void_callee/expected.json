@@ -1,0 +1,9 @@
+{
+  "description": "A void helper that prints, called from main, with A editing its argument's source and B an unrelated variable. Void callees have no PARAM_OUT edge by construction (the exporter emits one only for non-void methods), so this is the first fixture where a call carries argument flow *in* and nothing back out - and where observable output is produced inside a callee while main prints too, so the two prints' order spans a method boundary. Both hold: the merge is clean and prints A's value then B's. Git conflicts on it textually - the two edits land on adjacent lines - so it is also a false-textual-conflict case that the semantics merges.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 7,
+  "ap_b": 3,
+  "stdout": "12\n7\n",
+  "category": "false textual conflict \u2014 semantics merges it (void callee: PARAM_IN without PARAM_OUT)"
+}

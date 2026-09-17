@@ -1,0 +1,9 @@
+{
+  "description": "A adds a parameter to scale() and updates its one call site; B edits an independent variable. A signature change is a *fullName* change, so under the step-17 correspondence the old method is deleted and a new one added - the same delete+add treatment as a rename - and B's edit merges around it. Git conflicts (A's two edits straddle B's line), the semantics merges, and the merged program is the one both developers intended: A's two-argument scale with B's value.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 10,
+  "ap_b": 3,
+  "stdout": "12\n9\n",
+  "category": "false textual conflict \u2014 semantics merges it (signature change)"
+}

@@ -1,0 +1,7 @@
+{
+  "description": "Git conflicts (A re-indented the lines B edited), but whitespace changes no dependence: AP_A is empty and B's edit merges cleanly. False textual conflict.",
+  "verdict": "clean",
+  "git": "conflict",
+  "stdout": "10\n",
+  "ap_a": 0
+}

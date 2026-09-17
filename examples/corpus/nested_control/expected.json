@@ -1,0 +1,5 @@
+{
+  "description": "Control dependence one level deeper than control_dep: an if nested inside a while. A tightens the predicate (i > 2 -> i > 1), B adds a statement inside the guarded block. B's new statement is control-dependent on the predicate A changed, so it executes on a different iteration set than B intended.",
+  "verdict": "type1",
+  "git": "clean"
+}

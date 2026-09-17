@@ -1,0 +1,6 @@
+{
+  "description": "Two independent one-line callees on adjacent lines: A edits inc(), B edits dec(). Git conflicts (adjacent hunks); semantically the methods are dependence-disjoint and the merge is clean - multi-method reconstitution works today.",
+  "verdict": "clean",
+  "git": "conflict",
+  "stdout": "3\n6\n"
+}

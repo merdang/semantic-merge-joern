@@ -1,0 +1,9 @@
+{
+  "description": "A call as another call's argument: `outer(inner(seed))`, with A editing the inner callee and B an independent variable. The first fixture where the actual-in of one call is itself a call, which is where the bundled actual vertices are most likely to lose precision - the argument and the enclosing call collapse onto one call-site vertex. Clean, the value propagates through both callees correctly (60), and the demand-driven run agrees via the Type-0 certificate.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 15,
+  "ap_b": 3,
+  "stdout": "60\n7\n",
+  "category": "agreement (call as a call's argument)"
+}

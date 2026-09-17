@@ -1,0 +1,8 @@
+{
+  "description": "A renames scale() to amplify() (signature and call site, behaviour unchanged); B edits the body of the method A renamed. The ideal merge exists - amplify() carrying B's `x * 3`, printing 9 - and HRB cannot construct it: a rename is delete + add, so A's amplify() is a new method holding the OLD body while B's edit belongs to a method A deleted, and B's changed behaviour cannot survive. Type I fires. That is the specified behaviour and it errs the safe way (refuse rather than guess), and git conflicts here too - the signature and body lines are adjacent - so both tools hand it to a human. Compare convergent_insert, the other place delete+add costs a merge, where git does better than we do.",
+  "verdict": "type1",
+  "git": "conflict",
+  "ap_a": 9,
+  "ap_b": 9,
+  "category": "agreement (rename vs body edit \u2014 delete+add cannot carry the edit across)"
+}

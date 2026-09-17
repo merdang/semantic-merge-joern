@@ -1,0 +1,15 @@
+{
+  "description": "LIMITATION PIN (not a merge defect). A `for` loop - the first in the corpus. The merge itself is clean and the affected points are right, but the emitted program does not compile, for two reasons both upstream of the merge: javasrc2cpg gives the control structure the code string `for (int i = 1; Some(i < 4); i++)`, having stringified a Scala Option into what is supposed to be source text, and it attaches no body children under the loop's guard, so the body would be dropped even with the condition repaired. Emitting `for` correctly needs the header rebuilt from parts (init/condition/update) rather than copied from `code`. Pinned so the limitation cannot be forgotten; if the exporter learns to rebuild it, this fixture reports XPASS and the pin comes off.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 5,
+  "ap_b": 3,
+  "stdout": "36\n8\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "for-loop headers are copied from Joern's code string, which contains Some(...) and no body attachment",
+  "category": "known limitation (for loops are not emittable)"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "A call inside a loop body feeding a loop-carried accumulator, with A editing the callee and B an independent variable. Combines the two mechanisms no other fixture combines: loop carriage (which orders the body against the backedge) and the interprocedural layer (the edit is in the callee, so the scope must reach main through the formal-out). Clean, and the demand-driven run reaches the same verdict via the Type-0 certificate.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 10,
+  "ap_b": 3,
+  "stdout": "9\n4\n",
+  "category": "agreement (loop carriage across a call)"
+}

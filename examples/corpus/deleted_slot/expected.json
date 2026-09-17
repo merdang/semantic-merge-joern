@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (B == Base) whose result must equal A exactly. A deletes the first of two if-blocks, and the second - same label at header, condition and body positions - moves up into exactly its line:col slot. An unguarded identity fallback in correspondence (a base vertex GumTree did not match is assumed unmoved) would map the deleted block wholesale onto its successor while GumTree's explicit move-match claims the same target: a non-injective mapping, nothing registered as deleted, and the dead block riding into G_M through the preserved core - printing 16, a value NEITHER contributor computes (base prints 2, A prints 8). Identity claims therefore require the same statement text and an unclaimed target, with explicit claims resolving first.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 4,
+  "ap_b": 0,
+  "stdout": "8\n",
+  "category": "agreement (guarded identity claims in correspondence)"
+}

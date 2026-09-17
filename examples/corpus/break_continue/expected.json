@@ -1,0 +1,9 @@
+{
+  "description": "Jumps in the merged program: a while loop containing both a `continue` and a `break`, with A editing the accumulator inside the loop and B an independent variable. The first fixture in the corpus to contain either jump, which is how it caught a defect in a headline claim: `break`/`continue` are CONTROL_STRUCTURE vertices with no condition and no body, and emission's generic `code { ... }` shape rendered them as `continue; { }`, which javac rejects as unreachable. The claim that jumps need no special handling is true of the *dependence model* - control dependence places them like any other statement, and nothing in slicing, AP or the merge needed changing - but emission had to learn they carry no block (reconstitute.is_jump). Regression test for that.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 5,
+  "ap_b": 3,
+  "stdout": "16\n9\n",
+  "category": "agreement (regression test for break/continue emission)"
+}

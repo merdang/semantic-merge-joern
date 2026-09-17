@@ -1,0 +1,5 @@
+{
+  "description": "A three-level call chain main -> outer -> inner. A edits the deepest callee (x + 1 -> x + 5), B adds a call to the TOP of the chain expecting the old result. Detection must propagate transitively across two call boundaries, not just one.",
+  "verdict": "type1",
+  "git": "clean"
+}

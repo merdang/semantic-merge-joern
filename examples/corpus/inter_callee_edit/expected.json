@@ -1,0 +1,5 @@
+{
+  "description": "THE classic interprocedural silent merge: A edits twice()'s behaviour (x*2 -> x*3), B adds a call site relying on the old behaviour (expects twice(5) = 10). Git merges cleanly; the true verdict is Type-I through the call. The intra-procedural pipeline is blind to it - the motivating fixture for the interprocedural layer.",
+  "verdict": "type1",
+  "git": "clean"
+}

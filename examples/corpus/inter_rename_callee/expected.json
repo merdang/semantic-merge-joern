@@ -1,0 +1,5 @@
+{
+  "description": "A renames twice() to triple() (callee + its call site, consistently); B adds a new call to twice(). Git merges cleanly and the result does not even compile. True verdict: Type-I / conflict via method correspondence.",
+  "verdict": "type1",
+  "git": "clean"
+}

@@ -1,0 +1,16 @@
+=== Semantic merge report ===
+VERDICT: TYPE-I INTERFERENCE — merge refused (3 conflicting point(s))
+  damaged: A's changes at 0 point(s) · B's changes at 3 point(s) · preserved core at 0 point(s)
+
+method Main.main:void(java.lang.String[])
+  ✗   L3:13  'int x = 2'   [damages: B]
+      base 'int x = 1' · A 'int x = 2' · B 'int x = 3'
+      cause: contributors disagree on this statement: A has 'int x = 2', B has 'int x = 3'
+  ✗    L4:9  'System.out.println(x)'   [damages: B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'int x = 2' →(x)→ 'System.out.println(x)'
+  ✗    L4:9  'System.out'   [damages: B]
+      cause: downstream of the conflicting edits (dependence-affected)
+      path:  'System.out.println(x)' →(x)→ 'System.out'
+
+Fix the conflicting statements on one side and re-merge.

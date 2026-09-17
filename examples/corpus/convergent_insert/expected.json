@@ -1,0 +1,8 @@
+{
+  "description": "A and B make the IDENTICAL insertion (`x = x + 5;`). Correspondence runs base->A and base->B only - never A<->B, in our implementation or in the papers - so two independently inserted statements have no counterpart to be identified through. Both copies land in G_M, x becomes 11 rather than 6, and Type I fires. HPR as specified, but a FALSE SEMANTIC CONFLICT: git unifies identical additions and produces exactly the program both developers wrote (6 2). The corpus's one fixture where the textual tool does better. Found by fuzz.py, not by hand.",
+  "verdict": "type1",
+  "git": "clean",
+  "ap_a": 4,
+  "ap_b": 4,
+  "category": "false semantic conflict - git merges it correctly"
+}

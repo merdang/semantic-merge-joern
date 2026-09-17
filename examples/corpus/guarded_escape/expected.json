@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (B == Base) whose result must equal A exactly. Inside an if-block A moves the flat write `v0 = 5` after the guarded rewrite `v0 = 9`, making the guarded write dead; A also deletes three padding declarations, so the preserved inner if keeps a Base line number *after* A's write and the cross-contributor seed order reproduces Base's arrangement unless a constraint forbids it. Only _escaping_precedence can: a guarded writer placed after the escaping definition overwrites, on the runs where its branch fires, the value G_M says leaves the block. Conditional writers are therefore constrained like any other member.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 3,
+  "ap_b": 0,
+  "stdout": "5\n",
+  "category": "agreement (guarded writers in C3 kill-order)"
+}

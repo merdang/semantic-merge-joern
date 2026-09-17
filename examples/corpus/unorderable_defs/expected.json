@@ -1,0 +1,9 @@
+{
+  "description": "HPR Fig. 18. Two guarded definitions of x both reach `int y = x`; A swaps the two if-blocks (and edits u), B edits w. G_M carries def-order edges in BOTH directions - `x = 1 ->do(int y = x) x = 2` from B and the reverse from A - so Type I catches the reorder, which is where HPR put reorder detection (their third seed rule, SS4.1.2). Without those edges Type I is blind to it, because statement ORDER is nowhere else in G_M's edges. Type II still fires independently (def-order), so both are pinned.",
+  "verdict": "type1",
+  "git": "clean",
+  "ap_a": 11,
+  "ap_b": 4,
+  "feasible": false,
+  "category": "silent bad textual merge - semantics catches it (def-order, via Type I)"
+}

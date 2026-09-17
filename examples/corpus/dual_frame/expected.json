@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (B == Base) whose result must equal A exactly. A inserts a declaration above `v1 = v0 + 1` (shifting it down one line) and a use of it below (dragging it into Delta_A backward). The statement stays PRESERVED (its own in-edges unchanged) yet is contributed by both a and base, and wears A's coordinates by attribute priority - landing exactly on the line where Base's frame puts `System.out.println(v0)`. A span host that only required host and sub-expression to SHARE a contributor would attribute the println's receiver to the wrong statement, turning Joern's within-statement receiver cycle into a member-to-member mutual pair and reporting a Type-II cycle on a merge with nothing to interfere. The span host is therefore frame-local: a host may claim a sub-expression only when both wear the same attribute frame (first of A > B > Base in contributed_by).",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 5,
+  "ap_b": 0,
+  "stdout": "3\n13\n",
+  "category": "agreement (frame-local span hosting)"
+}

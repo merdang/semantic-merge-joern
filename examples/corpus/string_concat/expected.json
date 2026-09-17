@@ -1,0 +1,9 @@
+{
+  "description": "Non-integer types: a String local, a concatenation, and a println of the result, with A editing the string and B an independent int. Clean and round-trips. The pipeline is type-agnostic by construction - it reasons about statements and dependences, never about types - and this fixture is the evidence rather than the assumption.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 4,
+  "ap_b": 3,
+  "stdout": "hey there\n3\n",
+  "category": "false textual conflict \u2014 semantics merges it (non-integer types)"
+}

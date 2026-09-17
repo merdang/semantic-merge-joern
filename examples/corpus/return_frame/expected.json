@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (A == Base). Three ingredients: f1 opens with a DEAD local (int h0 = 4, never read); B's deletion rewires a use DOWNSTREAM of the call's return value while the call's own inputs stay untouched, so the callee enters Delta_B backward-only through its formal-out and its live chain (x = 5; return x + 1;) arrives in B's coordinate frame; and the deletion sits ABOVE the method in B's file, so B's frame numbers the live chain lower than Base's frame numbers the dead declaration. Sorted together the return precedes the declaration, and the merged method fails javac with 'unreachable statement' under a clean verdict - a clean-path invariant break. feasibility._exit_precedence forbids it: a bare return/break/continue must be its block's last statement, a Java emission constraint with no PDG counterpart and the same species as declares.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 0,
+  "ap_b": 4,
+  "stdout": "6\n",
+  "category": "agreement (exit-last emission ordering)"
+}

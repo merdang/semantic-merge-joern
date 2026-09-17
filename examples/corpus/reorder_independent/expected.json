@@ -1,0 +1,7 @@
+{
+  "description": "Git conflicts (A swapped the two declaration lines B touched), but A's reorder of independent statements is behaviour-preserving: AP_A is empty and only B's edit merges. False textual conflict.",
+  "verdict": "clean",
+  "git": "conflict",
+  "stdout": "1\n7\n",
+  "ap_a": 0
+}

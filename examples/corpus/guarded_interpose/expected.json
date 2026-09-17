@@ -1,0 +1,9 @@
+{
+  "description": "One-sided merge (B == Base) whose result must equal A exactly. A swaps two if-blocks: the first guards a write to v0, the second guards a read of it through the sub-expression `v0 + 0` - so no chained reaching-def relates the two headers and the only thing forbidding Base's order is C3 interposition itself. Excluding CONTROL_STRUCTURE members as killers ('a guarded block cannot be relied on to kill' - the wrong direction of C3, which forbids kills rather than relying on them) would leave the two blocks unordered in G_M, the merged-frame seed would keep Base's arrangement, and the merge would print v1 = 17 where A prints 3.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 4,
+  "ap_b": 0,
+  "stdout": "17\n3\n",
+  "category": "agreement (guarded killers in C3 interposition)"
+}

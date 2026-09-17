@@ -1,0 +1,10 @@
+{
+  "description": "OVER-APPROXIMATION PIN (safe direction, unlike field_write). Both variants edit the SAME recursive method, but disjointly: countdown() carries two independent computations, a printed trace (`shown`) and an accumulated return (`step`), and A edits only the accumulation while B edits only the trace. Ground truth is clean - A's change is visible only in the total (6 -> 12), B's only in the printed lines (30,20,10 -> 300,200,100), and the merge that keeps both is exactly the program both developers wanted. We report Type-I. The cause is recursion meeting the two-pass closure: A's edit reaches the method's formal-out, PARAM_OUT carries it to every call site including the RECURSIVE one inside countdown itself, and from there the descending pass re-enters the method's own entry and parameter, from which every statement in the method is reachable - so AP_A floods all 20 vertices, including `shown` and the print, which A's edit provably cannot affect. Over-reporting, so the tool refuses rather than emitting something wrong; tightening it needs context-sensitive treatment of recursive cycles, which HRB's summary-edge fixpoint addresses and our bundled call vertices do not. Pinned; XPASS retires it.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 20,
+  "ap_b": 4,
+  "stdout": "300\n200\n100\n12\n",
+  "expect_fail": "recursion + the two-pass closure make any edit in a recursive method affect the whole method",
+  "category": "over-approximation \u2014 an edit anywhere in a recursive method affects all of it"
+}

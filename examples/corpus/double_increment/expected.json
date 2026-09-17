@@ -1,0 +1,5 @@
+{
+  "description": "Git merges silently: both sides add `count = count + 100` at different places - the merged program increments twice (211), matching neither intent (111). Semantic: Type-I both directions.",
+  "verdict": "type1",
+  "git": "clean"
+}

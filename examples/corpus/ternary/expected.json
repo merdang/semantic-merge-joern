@@ -1,0 +1,9 @@
+{
+  "description": "A conditional expression, `int m = (p > q) ? p : q;` - the first in the corpus. A edits an operand that flows into it, B an independent variable. Works end to end: Joern models the ternary as an ordinary `<operator>.conditional` CALL inside the statement, so it needs no control-structure handling at all, its operands' flow reaches m, and emission copies the statement text through. The point of the fixture is that this is *not* a gap - unlike switch/for/do-while, a ternary is an expression and the statement-level abstraction covers it. Git conflicts textually (the two edits are on adjacent lines), so it doubles as a false-textual-conflict case.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 6,
+  "ap_b": 3,
+  "stdout": "9\n4\n",
+  "category": "false textual conflict \u2014 semantics merges it (ternary conditional expression)"
+}

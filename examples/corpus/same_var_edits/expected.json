@@ -1,0 +1,5 @@
+{
+  "description": "Git merges silently (init and increment of x edited in separate regions), but both sides changed x's computation - merged x = neither 6 nor 4. Semantic: Type-I both directions.",
+  "verdict": "type1",
+  "git": "clean"
+}

@@ -1,0 +1,15 @@
+{
+  "description": "LIMITATION PIN (not a merge defect). A `do`-`while` loop - the first in the corpus. As with for_loop the merge is clean and the affected points are right, but Joern's code string for the structure is the literal `do {...} while (n < 20)` - a placeholder, not source - so emission's `code { ... }` shape produces nonsense. Emitting it correctly needs the `do { body } while (cond);` shape reconstructed rather than copied. Pinned; XPASS retires it.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 6,
+  "ap_b": 3,
+  "stdout": "32\n6\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "do-while headers are a Joern placeholder string (`do {...} while (c)`), not emittable source",
+  "category": "known limitation (do-while loops are not emittable)"
+}

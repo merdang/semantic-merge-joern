@@ -1,0 +1,6 @@
+{
+  "description": "Two disjoint three-level call chains (topA->midA, topB->midB). A edits midA, B edits midB - no shared dependence. The merge must integrate both, and the two-pass slicer must not let one chain's context leak into the other.",
+  "verdict": "clean",
+  "git": "clean",
+  "stdout": "12\n63\n"
+}

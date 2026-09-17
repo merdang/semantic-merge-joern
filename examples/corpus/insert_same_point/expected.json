@@ -1,0 +1,6 @@
+{
+  "description": "Git conflicts (both append a print at the same spot), but the two new statements are dependence-independent - the merge keeps both. Order of the tied insertions follows contribution order (A first). False textual conflict.",
+  "verdict": "clean",
+  "git": "conflict",
+  "stdout": "1\n5\n7\n"
+}

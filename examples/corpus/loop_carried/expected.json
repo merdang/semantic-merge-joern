@@ -1,0 +1,5 @@
+{
+  "description": "A loop-carried dependence: A changes the accumulation step (sum + i -> sum + i*2), B changes the initialiser (0 -> 10). Both edits flow into the same accumulator across iterations, so the merged sum is neither side's intent (git merges silently: the edits are far apart).",
+  "verdict": "type1",
+  "git": "clean"
+}

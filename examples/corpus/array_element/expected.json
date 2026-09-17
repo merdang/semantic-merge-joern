@@ -1,0 +1,9 @@
+{
+  "description": "Array element assignment and read: arr[0] and arr[1] written separately, both read in one print, with A editing one element and B an independent variable. Clean and round-trips. Note the precision this does NOT have: Joern models arr[0] = 5 as an assignment whose target is an indexAccess, so element-level dependence is not distinguished - two writes to *different* elements of one array would be treated as writes to the same location. That costs precision (over-approximation, so still safe) and is invisible here because only one element is edited.",
+  "verdict": "clean",
+  "git": "conflict",
+  "ap_a": 2,
+  "ap_b": 3,
+  "stdout": "15\n4\n",
+  "category": "false textual conflict \u2014 semantics merges it (array elements)"
+}

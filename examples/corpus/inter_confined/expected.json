@@ -1,0 +1,9 @@
+{
+  "description": "The early-exit certificate holding non-trivially: the program HAS interprocedural boundaries - main calls twice(), so the call site, callee entry, formal-in and formal-out are all boundary vertices - but A's edit (int c = 3 -> 4) flows only into println(c), so AP_A stays boundary-free and the certificate licenses skipping the SDG passes. The harness asserts the licence is honest: the intra-procedural verdict must equal the interprocedural one here. Complements the intra fixtures (where the certificate holds vacuously - no boundaries at all) and the inter_* fixtures (where the APs cross a boundary and the certificate refuses).",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 3,
+  "ap_b": 0,
+  "stdout": "2\n4\n",
+  "category": "agreement (early-exit certificate holds with calls present)"
+}

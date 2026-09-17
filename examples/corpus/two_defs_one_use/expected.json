@@ -1,0 +1,8 @@
+{
+  "description": "Control for unorderable_defs: the same two-guarded-definition shape and the same two independent edits, without the reorder. Both sides agree on the definitions' order, so the merge is clean - pins that the def-order check does not over-fire on conditional definitions.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 4,
+  "ap_b": 4,
+  "stdout": "12\n22\n"
+}

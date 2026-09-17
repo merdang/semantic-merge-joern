@@ -1,0 +1,15 @@
+{
+  "description": "UNSOUNDNESS PIN - the field blind spot, made measurable. A writes the static field (F = 1 -> F = 5), B edits the statement that reads it (int x = F -> int x = F * 2). Ground truth is Type-I interference: A's changed behaviour is x == 5, B's is x == 2, and any merge of both gives x == 10, so neither contributor's change survives. We report **clean**, because Joern emits no dependence between a field write and a field read - probed directly here: the graph has Main.F field-access vertices and intra-statement edges, but no edge from `Main.F = 1` to `int x = F`. So both git and this tool silently produce a program neither developer asked for, and this is the one quadrant where the semantic merge is *not* better than the textual one. Modelling it needs reaching definitions over heap locations plus aliasing, which is why the pin exists rather than a fix. Round-trip additionally fails on all three versions because reconstitution emits only methods, so the class-level field declaration is dropped - a separate, smaller emission gap. This fixture is what makes both claims measurable instead of asserted.",
+  "verdict": "type1",
+  "git": "clean",
+  "ap_a": 2,
+  "ap_b": 4,
+  "stdout": "5\n24\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "field dependence is not modelled: genuine interference through a static field is reported clean",
+  "category": "UNSOUND \u2014 both git and semantics merge what genuinely interferes (field blind spot)"
+}

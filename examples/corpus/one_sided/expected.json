@@ -1,0 +1,8 @@
+{
+  "description": "A edits b's increment and inserts an if-block; B is identical to Base. The merged program must be exactly A.",
+  "verdict": "clean",
+  "ap_a": 9,
+  "ap_b": 0,
+  "stdout": "a: 2, b: 7\n",
+  "git": "clean"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "A while loop inside a while loop, with A editing the inner body's accumulator and B an independent variable. The counter j is declared outside so this tests *nesting* rather than block-scoped declarations. First fixture with two levels of loop: the inner body's region is nested two deep, its loop-carried dependence on total must not be confused with the outer loop's on i, and reconstitution has to rebuild both levels. Clean, and every version round-trips.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 4,
+  "ap_b": 3,
+  "stdout": "12\n5\n",
+  "category": "agreement (nested loops)"
+}

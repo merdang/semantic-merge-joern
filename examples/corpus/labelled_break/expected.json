@@ -1,0 +1,15 @@
+{
+  "description": "LIMITATION PIN (not a merge defect). A labelled `break outer;` escaping two loop levels, with A editing the inner accumulator and B an independent variable. The merge is clean and the affected points are right; emission fails twice over - the label declaration `outer:` is not a vertex at all so it is dropped, and `break outer;` does not match the bare-jump test in reconstitute.is_jump, so it is rendered as a block header. Fixing the second alone would not help while the label is missing. Same family as switch/for/do-while. Pinned; XPASS retires it.",
+  "verdict": "clean",
+  "git": "clean",
+  "ap_a": 11,
+  "ap_b": 3,
+  "stdout": "6\n8\n",
+  "round_trip_fails": [
+    "base",
+    "a",
+    "b"
+  ],
+  "expect_fail": "labelled break: the label is not exported and the jump renders as a block header",
+  "category": "known limitation (labelled jumps are not emittable)"
+}
