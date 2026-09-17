@@ -197,7 +197,7 @@ If you use this software, please cite the archived release:
 
 > Gurbangylyjov, M. (2026). *semantic-merge-joern: semantic three-way merge for
 > Java on Joern's Code Property Graph* (v1.0) [Software]. Zenodo.
-> https://doi.org/ZENODO-DOI-HERE
+> https://doi.org/10.5281/zenodo.22809122
 
 ```bibtex
 @misc{gurbangylyjov2026semanticmerge,
@@ -207,8 +207,8 @@ If you use this software, please cite the archived release:
   year         = {2026},
   version      = {1.0},
   publisher    = {Zenodo},
-  doi          = {ZENODO-DOI-HERE},
-  howpublished = {\url{https://doi.org/ZENODO-DOI-HERE}}
+  doi          = {10.5281/zenodo.22809122},
+  howpublished = {\url{https://doi.org/10.5281/zenodo.22809122}}
 }
 ```
 
